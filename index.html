@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAF La Roche-Bonneville - Inscription aux cours d'escalade</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M20 5L30 15L25 20L20 15L15 20L10 15L20 5Z" fill="currentColor"/>
+                    <path d="M10 20L15 25L20 20L25 25L30 20L35 35H5L10 20Z" fill="currentColor" opacity="0.7"/>
+                </svg>
+                <span>CAF La Roche-Bonneville</span>
+            </div>
+            <nav>
+                <a href="https://www.caflarochebonneville.fr" target="_blank" class="btn-primary">Site du club</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Inscription aux cours d'escalade</h1>
+            <p>Guide étape par étape pour obtenir votre licence et finaliser votre inscription</p>
+        </div>
+    </section>
+
+    <!-- Progress Indicator -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Vérification</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Licence</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Inscription</div>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Confirmation</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Step 1: Vérification initiale -->
+        <div class="step-content active" id="step-1">
+            <div class="card">
+                <h2>Bienvenue sur le guide d'inscription</h2>
+                <div class="question-group">
+                    <h3>Aviez-vous une licence CAF La Roche-Bonneville la saison dernière ?</h3>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="licence-previous" value="yes">
+                            <span class="radio-custom"></span>
+                            <span>Oui, je dois la renouveler</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="licence-previous" value="no">
+                            <span class="radio-custom"></span>
+                            <span>Non, c'est ma première licence</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Prise de licence -->
+        <div class="step-content" id="step-2">
+            <div class="card">
+                <h2>Obtention de votre licence CAF</h2>
+                
+                <div class="alert alert-danger">
+                    <svg width="20" height="20" viewBox="0 0 20 20">
+                        <circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M10 6v4m0 2h0" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <div>
+                        <strong>IMPORTANT :</strong> Ne prenez ou renouvelez votre licence qu'à partir du 1er septembre !
+                        <br>Avant cette date, seules les licences de la saison précédente sont délivrées (inutiles et non remboursables).
+                    </div>
+                </div>
+
+                <div class="date-checker">
+                    <p>Nous sommes le <span id="current-date"></span></p>
+                    <div id="date-status"></div>
+                </div>
+
+                <!-- Pour le renouvellement -->
+                <div class="licence-section" id="renewal-section" style="display: none;">
+                    <h3>🔄 Renouvellement de licence</h3>
+                    <p>Vous aviez déjà une licence la saison dernière. Voici comment la renouveler :</p>
+                    
+                    <div class="instruction-card">
+                        <div class="step-number-small">1</div>
+                        <div>
+                            <h4>Préparez vos informations</h4>
+                            <ul>
+                                <li>Votre numéro de licence (sur votre carte ou dans vos emails)</li>
+                                <li>Votre code internet (dans l'email de l'année dernière ou cliquez sur "Code perdu")</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="instruction-card">
+                        <div class="step-number-small">2</div>
+                        <div>
+                            <h4>Renouvelez en ligne (recommandé)</h4>
+                            <a href="https://extranet-clubalpin.com/renouveler/" target="_blank" class="btn-action">
+                                Accéder au renouvellement en ligne
+                                <svg width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none" transform="rotate(-90 8 8)"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pour nouvelle licence -->
+                <div class="licence-section" id="new-section" style="display: none;">
+                    <h3>✨ Première licence</h3>
+                    <p>Bienvenue ! Voici comment obtenir votre première licence CAF :</p>
+                    
+                    <div class="instruction-card">
+                        <div class="step-number-small">1</div>
+                        <div>
+                            <h4>Créez votre licence en ligne</h4>
+                            <a href="https://extranet-clubalpin.com/app/webeff/we_crv2_step01.php?IDCLUB=7480&Hchk=AzQHx9hUDyU2RnsrFH9X38HWsKkdR9" target="_blank" class="btn-action">
+                                Créer ma première licence
+                                <svg width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none" transform="rotate(-90 8 8)"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="instruction-card">
+                        <div class="step-number-small">2</div>
+                        <div>
+                            <h4>Gardez votre numéro de licence</h4>
+                            <p>Vous le recevrez par email après validation. Notez-le précieusement !</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-secondary" onclick="previousStep()">
+                        <svg width="20" height="20" viewBox="0 0 20 20">
+                            <path d="M13 4l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        Retour
+                    </button>
+                    <button class="btn-primary btn-large" onclick="confirmLicenceAndContinue()" id="step2-continue">
+                        J'ai obtenu/renouvelé ma licence et j'ai mon numéro
+                        <svg width="20" height="20" viewBox="0 0 20 20">
+                            <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: Mise à jour inscription -->
+        <div class="step-content" id="step-3">
+            <div class="card">
+                <h2>Mise à jour de votre pré-inscription</h2>
+                <p class="subtitle">Dernière étape pour valider votre inscription aux cours</p>
+
+                <!-- Pour anciens adhérents -->
+                <div class="inscription-section" id="existing-member" style="display: none;">
+                    <h3>👤 Renouvellement de licence</h3>
+                    
+                    <div class="instruction-card">
+                        <div class="step-number-small">1</div>
+                        <div>
+                            <h4>Accédez à l'espace adhérent</h4>
+                            <a href="https://www.caflarochebonneville.fr/cours.html" target="_blank" class="btn-action">
+                                Accéder à l'espace adhérent
+                                <svg width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none" transform="rotate(-90 8 8)"/>
+                                </svg>
+                            </a>
+                            <p class="help-text">Puis connectez-vous comme indiqué :</p>
+                            <img src="step3-v2-1.png" alt="Se connecter à l'espace adhérent" class="screenshot">
+                        </div>
+                    </div>
+
+                    <div class="instruction-card">
+                        <div class="step-number-small">2</div>
+                        <div>
+                            <h4>Cliquez sur l'onglet "Inscription"</h4>
+                            <img src="step3-3.png" alt="Cliquer sur Inscription" class="screenshot">
+                        </div>
+                    </div>
+
+                    <div class="instruction-card">
+                        <div class="step-number-small">3</div>
+                        <div>
+                            <h4>Vérifiez le statut de votre inscription</h4>
+                            <img src="step3-v2-3.png" alt="Statut de l'inscription" class="screenshot">
+                        </div>
+                    </div>
+
+                    <div class="status-messages">
+                        <h4>Messages que vous verrez :</h4>
+                        
+                        <div class="status-card warning">
+                            <span class="status-icon">⚠️</span>
+                            <div>
+                                <strong>Avant le renouvellement :</strong>
+                                <code>La licence 7480XXXXXXXX n'a pas été renouvelée</code>
+                            </div>
+                        </div>
+                        
+                        <div class="status-card info">
+                            <span class="status-icon">⏳</span>
+                            <div>
+                                <strong>Après renouvellement (24-48h) :</strong>
+                                <code>En attente de synchronisation...</code>
+                            </div>
+                        </div>
+                        
+                        <div class="status-card success">
+                            <span class="status-icon">✅</span>
+                            <div>
+                                <strong>Inscription validée :</strong>
+                                <code>La licence 7480XXXXXXXX est valide</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pour nouveaux -->
+                <div class="inscription-section" id="new-member" style="display: none;">
+                    <h3>🆕 Première inscription</h3>
+                    <p>Suivez ces étapes pour finaliser votre inscription sur le site du club :</p>
+                    
+                    <div class="instruction-card">
+                        <div class="step-number-small">1</div>
+                        <div>
+                            <h4>Accédez au site du club</h4>
+                            <p>Rendez-vous sur la page des cours</p>
+                            <a href="https://www.caflarochebonneville.fr/cours.html" target="_blank" class="btn-action">
+                                Ouvrir la page des cours
+                                <svg width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none" transform="rotate(-90 8 8)"/>
+                                </svg>
+                            </a>
+                            <p class="help-text">Puis cliquez sur "Connexion" comme indiqué :</p>
+                            <img src="step3-1.png" alt="Cliquer sur Connexion" class="screenshot">
+                        </div>
+                    </div>
+
+                    <div class="instruction-card">
+                        <div class="step-number-small">2</div>
+                        <div>
+                            <h4>Connectez-vous avec vos identifiants</h4>
+                            <img src="step3-2.png" alt="Formulaire de connexion" class="screenshot">
+                        </div>
+                    </div>
+
+                    <div class="instruction-card">
+                        <div class="step-number-small">3</div>
+                        <div>
+                            <h4>Cliquez sur l'onglet "Inscription"</h4>
+                            <p>Une fois connecté, accédez à l'onglet Inscription</p>
+                            <img src="step3-3.png" alt="Cliquer sur Inscription" class="screenshot">
+                        </div>
+                    </div>
+
+                    <div class="instruction-card">
+                        <div class="step-number-small">4</div>
+                        <div>
+                            <h4>Entrez votre numéro de licence</h4>
+                            <p>Saisissez votre numéro de licence (format: 7480XXXXXXXX) et validez</p>
+                            <img src="step3-4.png" alt="Saisir le numéro de licence" class="screenshot">
+                            <div class="alert alert-info" style="margin-top: 1rem;">
+                                <svg width="20" height="20" viewBox="0 0 20 20">
+                                    <circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M10 6v4m0 2h0" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <div>
+                                    <strong>Note :</strong> Le message passera de jaune à vert après 24-48h (synchronisation avec la fédération)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-secondary" onclick="previousStep()">
+                        <svg width="20" height="20" viewBox="0 0 20 20">
+                            <path d="M13 4l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        Retour
+                    </button>
+                    <button class="btn-primary btn-large" onclick="nextStep()" id="step3-continue">
+                        Terminer
+                        <svg width="20" height="20" viewBox="0 0 20 20">
+                            <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Confirmation -->
+        <div class="step-content" id="step-4">
+            <div class="card success-card">
+                <div class="success-icon">
+                    <svg width="60" height="60" viewBox="0 0 60 60">
+                        <circle cx="30" cy="30" r="28" fill="none" stroke="currentColor" stroke-width="3"/>
+                        <path d="M18 30l8 8 16-16" stroke="currentColor" stroke-width="3" fill="none"/>
+                    </svg>
+                </div>
+                
+                <h2>Félicitations ! 🎉</h2>
+                <p class="subtitle">Merci d'avoir finalisé votre inscription</p>
+                
+                <div class="final-message">
+                    <p style="font-size: 1.25rem; margin: 2rem 0;">Nous vous souhaitons une excellente année de cours d'escalade ! 🧗</p>
+                </div>
+
+                <div class="button-group">
+                    <a href="https://www.caflarochebonneville.fr" target="_blank" class="btn-primary btn-large">
+                        Retour au site du club
+                        <svg width="20" height="20" viewBox="0 0 20 20">
+                            <path d="M11 3h6v6m0-6l-8 8" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CAF La Roche-Bonneville - Guide d'inscription aux cours d'escalade</p>
+            <p class="footer-links">
+                <a href="https://www.caflarochebonneville.fr" target="_blank">Site officiel</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
