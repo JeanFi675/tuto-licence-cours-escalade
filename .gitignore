@@ -1,0 +1,75 @@
+# Sécurité - JAMAIS de credentials ou secrets
+*.key
+*.pem
+*.p12
+*.pfx
+.env
+.env.*
+!.env.example
+secrets/
+credentials/
+config/secrets.yml
+config/credentials.yml
+
+# Tokens et authentification
+.netrc
+.authinfo
+.git-credentials
+*.token
+auth.json
+
+# Fichiers de configuration sensibles
+config.local.js
+settings.local.json
+*.local.yml
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+vendor/
+__pycache__/
+*.pyc
+
+# Build
+dist/
+build/
+out/
+target/
+*.class
+
+# Temporaires
+tmp/
+temp/
+cache/
+*.tmp
+*.bak
+*.backup
+
+# Base de données
+*.sqlite
+*.sqlite3
+*.db
+database/
+
+# Fichiers personnels
+personal/
+private/
+confidential/
